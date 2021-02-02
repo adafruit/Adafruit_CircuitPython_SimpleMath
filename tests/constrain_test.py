@@ -4,6 +4,7 @@
 
 from adafruit_simplemath import constrain
 
+
 def test_constrain():
     assert constrain(1, 1, 10) == 1
     assert constrain(10, 1, 10) == 10

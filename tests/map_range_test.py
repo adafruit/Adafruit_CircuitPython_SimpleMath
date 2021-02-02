@@ -4,6 +4,7 @@
 
 from adafruit_simplemath import map_range
 
+
 def test_map_range():
     assert map_range(1, 0, 10, 0, 100) == 10.0
     assert map_range(-1, 0, 10, 0, 100) == 0
