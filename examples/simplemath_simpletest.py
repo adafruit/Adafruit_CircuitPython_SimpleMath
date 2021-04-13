@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
+# SPDX-FileCopyrightText: 2021 Dan Halbert for Adafruit Industries
+# SPDX-FileCopyrightText: 2021 James Carr
 #
 # SPDX-License-Identifier: Unlicense
 
-from adafruit_simplemath import map_range, constrain
+from adafruit_simplemath import map_range, unconstrained_map_range, constrain
 
 print("map_range() examples")
 # Map, say, a sensor value, from a range of 0-255 to 0-1023.
@@ -20,15 +21,16 @@ screen_width = 320  # or board.DISPLAY.width
 x = map_range(percent, 0, 100, 0, screen_width - 1)
 print("X position", percent, "% from the left of screen is", x)
 
+print("\nunconstrained_map_range() examples")
 celsius = 20
-fahrenheit = map_range(celsius, 0, 100, 32, 212, constrained=False)
+fahrenheit = unconstrained_map_range(celsius, 0, 100, 32, 212)
 print(celsius, "degress Celsius =", fahrenheit, "degrees Fahrenheit")
 
 celsius = -20
-fahrenheit = map_range(celsius, 0, 100, 32, 212, False)
+fahrenheit = unconstrained_map_range(celsius, 0, 100, 32, 212)
 print(celsius, "degress Celsius =", fahrenheit, "degrees Fahrenheit")
 
-print("constrain() examples")
+print("\nconstrain() examples")
 # Constrain a value to a range.
 def constrain_example(value, min_value, max_value):
     constrained_value = constrain(value, min_value, max_value)
@@ -45,5 +47,8 @@ def constrain_example(value, min_value, max_value):
 
 
 constrain_example(0, 1, 3)  # expects 1
+constrain_example(0, 3, 1)  # expects 1
 constrain_example(4, 1, 3)  # expects 3
+constrain_example(4, 3, 1)  # expects 3
 constrain_example(2, 2, 3)  # expects 2
+constrain_example(2, 3, 2)  # expects 2

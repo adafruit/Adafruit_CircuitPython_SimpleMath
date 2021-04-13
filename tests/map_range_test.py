@@ -13,6 +13,3 @@ def test_map_range():
     assert map_range(1, 10, 0, 0, 5) == 4.5
     assert map_range(1, 0, 10, 10, 0) == 9.0
     assert map_range(10, 1, 10, 1, 20) == 20.0
-    assert map_range(392, 32, 212, 0, 100) == 100.0
-    assert map_range(392, 32, 212, 0, 100, constrained=True) == 100.0
-    assert map_range(392, 32, 212, 0, 100, constrained=False) == 200.0
