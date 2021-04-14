@@ -54,16 +54,6 @@ def map_range(
     :return: Returns value mapped to new range.
     :rtype: float
     """
-    # in_range = in_max - in_min
-    # in_delta = x - in_min
-    # if in_range != 0:
-    #     mapped = in_delta / in_range
-    # elif in_delta != 0:
-    #     mapped = in_delta
-    # else:
-    #     mapped = 0.5
-    # mapped *= out_max - out_min
-    # mapped += out_min
 
     mapped = unconstrained_map_range(x, in_min, in_max, out_min, out_max)
 
