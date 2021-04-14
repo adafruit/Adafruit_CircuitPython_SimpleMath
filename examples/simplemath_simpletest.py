@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Unlicense
 
-from adafruit_simplemath import map_range, unconstrained_map_range, constrain
+from adafruit_simplemath import map_range, map_unconstrained_range, constrain
 
 print("map_range() examples")
 # Map, say, a sensor value, from a range of 0-255 to 0-1023.
@@ -21,13 +21,13 @@ screen_width = 320  # or board.DISPLAY.width
 x = map_range(percent, 0, 100, 0, screen_width - 1)
 print("X position", percent, "% from the left of screen is", x)
 
-print("\nunconstrained_map_range() examples")
+print("\nmap_unconstrained_range() examples")
 celsius = 20
-fahrenheit = unconstrained_map_range(celsius, 0, 100, 32, 212)
+fahrenheit = map_unconstrained_range(celsius, 0, 100, 32, 212)
 print(celsius, "degress Celsius =", fahrenheit, "degrees Fahrenheit")
 
 celsius = -20
-fahrenheit = unconstrained_map_range(celsius, 0, 100, 32, 212)
+fahrenheit = map_unconstrained_range(celsius, 0, 100, 32, 212)
 print(celsius, "degress Celsius =", fahrenheit, "degrees Fahrenheit")
 
 print("\nconstrain() examples")

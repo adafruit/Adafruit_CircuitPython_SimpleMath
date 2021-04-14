@@ -35,7 +35,7 @@ def map_range(
     :attr:`out_min` is greater than :attr:`out_max`, the corresponding range
     is reversed, allowing, for example, mapping a range of 0-10 to 50-0.
 
-    See also :py:func:`unconstrained_map_range`
+    See also :py:func:`map_unconstrained_range`
 
     .. code-block::
 
@@ -55,11 +55,11 @@ def map_range(
     :rtype: float
     """
 
-    mapped = unconstrained_map_range(x, in_min, in_max, out_min, out_max)
+    mapped = map_unconstrained_range(x, in_min, in_max, out_min, out_max)
     return constrain(mapped, out_min, out_max)
 
 
-def unconstrained_map_range(
+def map_unconstrained_range(
     x: float, in_min: float, in_max: float, out_min: float, out_max: float
 ) -> float:
     """
@@ -74,10 +74,10 @@ def unconstrained_map_range(
 
     .. code-block::
 
-        from adafruit_simplemath import unconstrained_map_range
+        from adafruit_simplemath import map_unconstrained_range
 
         celsius = -20
-        fahrenheit = unconstrained_map_range(celsius, 0, 100, 32, 212)
+        fahrenheit = map_unconstrained_range(celsius, 0, 100, 32, 212)
         print(celsius, "degress Celsius =", fahrenheit, "degrees Fahrenheit")
 
     :param float x: Value to convert
