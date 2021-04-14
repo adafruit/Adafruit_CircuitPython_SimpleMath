@@ -56,10 +56,7 @@ def map_range(
     """
 
     mapped = unconstrained_map_range(x, in_min, in_max, out_min, out_max)
-
-    if out_min <= out_max:
-        return max(min(mapped, out_max), out_min)
-    return min(max(mapped, out_max), out_min)
+    return constrain(mapped, out_min, out_max)
 
 
 def unconstrained_map_range(
