@@ -13,3 +13,6 @@ def test_map_range():
     assert map_range(1, 10, 0, 0, 5) == 4.5
     assert map_range(1, 0, 10, 10, 0) == 9.0
     assert map_range(10, 1, 10, 1, 20) == 20.0
+    # Tests for out-of-range descending output order
+    assert map_range(11, 1, 10, 20, 1) == 1.0
+    assert map_range(-1, 1, 10, 20, 1) == 20.0
