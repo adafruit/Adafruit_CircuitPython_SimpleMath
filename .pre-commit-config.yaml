@@ -40,4 +40,3 @@ repos:
         files: "^tests/"
         args:
         - --disable=missing-docstring,consider-using-f-string,duplicate-code
-        
