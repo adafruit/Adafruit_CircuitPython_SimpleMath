@@ -24,6 +24,10 @@ jobs:
     - name: Install pytest
       run: pip install pytest
     - name: Install locally
-      run: pip install .
+      run: |
+        for file in $(find -not -path "./.*" -not -path "./docs*" \( -name "*.py" -o -name "*.toml" \) ); do
+            sed -i -e "s/0.0.0-auto.0/1.2.3-testrev/" $file;
+        done;
+        pip install .
     - name: Run tests
       run: pytest
