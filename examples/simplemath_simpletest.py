@@ -31,6 +31,8 @@ fahrenheit = map_unconstrained_range(celsius, 0, 100, 32, 212)
 print(celsius, "degress Celsius =", fahrenheit, "degrees Fahrenheit")
 
 print("\nconstrain() examples")
+
+
 # Constrain a value to a range.
 def constrain_example(value, min_value, max_value):
     constrained_value = constrain(value, min_value, max_value)
