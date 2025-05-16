@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Unlicense
 
-from adafruit_simplemath import map_range, map_unconstrained_range, constrain
+from adafruit_simplemath import constrain, map_range, map_unconstrained_range
 
 print("map_range() examples")
 # Map, say, a sensor value, from a range of 0-255 to 0-1023.
